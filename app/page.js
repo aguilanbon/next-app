@@ -44,6 +44,12 @@ export default async function Home() {
                 Login
               </Link>
             </div>
+            <div className="w-full flex items-center justify-center">or</div>
+            <div className="form-control">
+              <Link href={`/dashboard`} className="btn btn-primary-focus">
+                Sign up
+              </Link>
+            </div>
           </div>
         </div>
       </div>
