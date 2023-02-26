@@ -1,6 +1,6 @@
 export default function DashboardStats() {
   return (
-    <div className="stats shadow">
+    <div className="stats shadow mb-10">
       <div className="stat">
         <div className="stat-figure text-primary">
           <svg

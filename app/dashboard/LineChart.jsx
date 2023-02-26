@@ -1,93 +1,111 @@
 "use client";
 
-import React, { PureComponent } from "react";
-import {
-  LineChart,
-  Line,
-  XAxis,
-  YAxis,
-  CartesianGrid,
-  Tooltip,
-  Legend,
-  ResponsiveContainer,
-} from "recharts";
+import { Line, ResponsiveLine } from "@nivo/line";
 
-const data = [
-  {
-    name: "Page A",
-    uv: 4000,
-    pv: 2400,
-    amt: 2400,
-  },
-  {
-    name: "Page B",
-    uv: 3000,
-    pv: 1398,
-    amt: 2210,
-  },
-  {
-    name: "Page C",
-    uv: 2000,
-    pv: 9800,
-    amt: 2290,
-  },
-  {
-    name: "Page D",
-    uv: 2780,
-    pv: 3908,
-    amt: 2000,
-  },
-  {
-    name: "Page E",
-    uv: 1890,
-    pv: 4800,
-    amt: 2181,
-  },
-  {
-    name: "Page F",
-    uv: 2390,
-    pv: 3800,
-    amt: 2500,
-  },
-  {
-    name: "Page G",
-    uv: 3490,
-    pv: 4300,
-    amt: 2100,
-  },
-];
-
-export default class Example extends PureComponent {
-  static demoUrl = "https://codesandbox.io/s/simple-line-chart-kec3v";
-
-  render() {
-    return (
-      <ResponsiveContainer width="100%" height="100%">
-        <LineChart
-          width={500}
-          height={300}
-          data={data}
-          margin={{
-            top: 5,
-            right: 30,
-            left: 20,
-            bottom: 5,
-          }}
-        >
-          <CartesianGrid strokeDasharray="3 3" />
-          <XAxis dataKey="name" />
-          <YAxis />
-          <Tooltip />
-          <Legend />
-          <Line
-            type="monotone"
-            dataKey="pv"
-            stroke="#8884d8"
-            activeDot={{ r: 8 }}
-          />
-          <Line type="monotone" dataKey="uv" stroke="#82ca9d" />
-        </LineChart>
-      </ResponsiveContainer>
-    );
-  }
+export default function DashboardLineChart() {
+  const data = [
+    {
+      id: "People",
+      data: [
+        { x: "Jan", y: 10 },
+        { x: "Feb", y: 20 },
+        { x: "Mar", y: 15 },
+        { x: "Apr", y: 25 },
+        { x: "May", y: 30 },
+        { x: "Jun", y: 28 },
+      ],
+    },
+    {
+      id: "Not People",
+      data: [
+        { x: "Jan", y: 13 },
+        { x: "Feb", y: 20 },
+        { x: "Mar", y: 4 },
+        { x: "Apr", y: 25 },
+        { x: "May", y: 30 },
+        { x: "Jun", y: 16 },
+      ],
+    },
+  ];
+  return (
+    <div className="lg:w-1/2 w-full h-full flex">
+      <ResponsiveLine
+        data={data}
+        margin={{ top: 50, right: 110, bottom: 50, left: 60 }}
+        xScale={{ type: "point" }}
+        yScale={{
+          type: "linear",
+          min: "auto",
+          max: "auto",
+          stacked: false,
+          reverse: false,
+        }}
+        curve="cardinal"
+        axisTop={null}
+        axisRight={null}
+        axisBottom={{
+          orient: "bottom",
+          tickSize: 5,
+          tickPadding: 5,
+          tickRotation: 0,
+          legend: "Month",
+          legendOffset: 36,
+          legendPosition: "middle",
+        }}
+        axisLeft={{
+          orient: "left",
+          tickSize: 5,
+          tickPadding: 5,
+          tickRotation: 0,
+          legend: "Total",
+          legendOffset: -40,
+          legendPosition: "middle",
+        }}
+        theme={{
+          textColor: "white",
+          labels: {
+            text: {
+              color: "#f00505",
+            },
+          },
+        }}
+        enableGridX={false}
+        colors={{ scheme: "nivo" }}
+        lineWidth={2}
+        pointSize={4}
+        pointColor={{ theme: "background" }}
+        pointBorderWidth={2}
+        pointBorderColor={{ from: "serieColor" }}
+        pointLabelYOffset={-12}
+        useMesh={true}
+        legends={[
+          {
+            itemTextColor: "rgba(249, 249, 249, 0.927)",
+            anchor: "bottom-right",
+            direction: "column",
+            justify: false,
+            translateX: 100,
+            translateY: 0,
+            itemsSpacing: 0,
+            itemDirection: "left-to-right",
+            itemWidth: 80,
+            itemHeight: 20,
+            itemOpacity: 0.75,
+            symbolSize: 12,
+            symbolShape: "circle",
+            symbolBorderColor: "rgba(0, 0, 0, .5)",
+            effects: [
+              {
+                on: "hover",
+                style: {
+                  itemBackground: "rgba(0, 0, 0, .03)",
+                  itemOpacity: 1,
+                },
+              },
+            ],
+          },
+        ]}
+      />
+    </div>
+  );
 }

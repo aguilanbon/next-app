@@ -2,7 +2,7 @@ import Image from "next/image";
 
 export default function DashboardTable() {
   return (
-    <div className="overflow-x-auto w-full">
+    <div className="overflow-x-auto w-full h-auto">
       <table className="table w-full">
         {/* head */}
         <thead>
