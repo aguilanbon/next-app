@@ -1,7 +1,7 @@
 "use client";
 
 import { useAtom } from "jotai";
-import { toggleMenuAtom, statusAtom } from "../atom/NavigationAtom";
+import { toggleMenuAtom, statusAtom } from "../store/NavigationAtom";
 
 export default function Sidebar() {
   const [menu] = useAtom(statusAtom);
@@ -13,7 +13,7 @@ export default function Sidebar() {
         menu ? `flex` : `hidden`
       } items-center`}
     >
-      <div className="flex lg:w-1/4 sm:w-1/2 xs:w-3/4 bg-base-300 blur-0 rounded-tr-md rounded-br-md h-screen">
+      <div className="flex lg:w-1/4 sm:w-1/2 xs:w-3/4 bg-base-300 blur-0 rounded-tr-md rounded-br-md h-full">
         <div className="w-full flex justify-end p-2">
           <button className="btn btn-xs btn-square" onClick={() => closeNav()}>
             <svg

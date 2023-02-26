@@ -5,7 +5,7 @@ import Sidebar from "./Sidebar";
 export default function DashboardLayout({ children }) {
   return (
     <div className="relative">
-      <div className="navbar bg-base-100">
+      <div className="navbar bg-base-100 fixed top-0">
         <div className="flex-none">
           <DashboardHamburger />
         </div>
@@ -42,7 +42,7 @@ export default function DashboardLayout({ children }) {
           </ul>
         </div>
       </div>
-      <div className="bg-base-200 min-h-screen p-8">{children}</div>
+      <div className="bg-base-200 min-h-screen p-8 pt-20">{children}</div>
       <Sidebar />
     </div>
   );

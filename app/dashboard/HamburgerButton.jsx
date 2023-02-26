@@ -1,6 +1,6 @@
 "use client";
 import { useAtom } from "jotai";
-import { toggleMenuAtom } from "../atom/NavigationAtom";
+import { toggleMenuAtom } from "../store/NavigationAtom";
 
 export default function DashboardHamburger() {
   const [, closeNav] = useAtom(toggleMenuAtom);
