@@ -53,7 +53,7 @@ export default function DashboardLayout({ children }) {
           </ul>
         </div>
       </div>
-      <div className="bg-base-200 min-h-screen">{children}</div>
+      <div className="bg-base-200 min-h-screen p-8">{children}</div>
     </div>
   );
 }
