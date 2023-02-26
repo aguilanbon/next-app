@@ -13,7 +13,8 @@
     "next": "13.2.1",
     "pocketbase": "^0.11.1",
     "react": "18.2.0",
-    "react-dom": "18.2.0"
+    "react-dom": "18.2.0",
+    "recharts": "^2.4.3"
   },
   "devDependencies": {
     "autoprefixer": "^10.4.13",
