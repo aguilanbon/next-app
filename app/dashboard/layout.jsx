@@ -1,25 +1,13 @@
 import Image from "next/image";
+import DashboardHamburger from "./HamburgerButton";
+import Sidebar from "./Sidebar";
 
 export default function DashboardLayout({ children }) {
   return (
-    <div>
+    <div className="relative">
       <div className="navbar bg-base-100">
         <div className="flex-none">
-          <button className="btn btn-square btn-ghost">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              fill="none"
-              viewBox="0 0 24 24"
-              className="inline-block w-5 h-5 stroke-current"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth="2"
-                d="M4 6h16M4 12h16M4 18h16"
-              ></path>
-            </svg>
-          </button>
+          <DashboardHamburger />
         </div>
         <div className="flex-1">
           <a className="btn btn-ghost normal-case text-xl">Dashboard</a>
@@ -31,6 +19,7 @@ export default function DashboardLayout({ children }) {
                 width={200}
                 height={200}
                 src={`https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80`}
+                alt="wow"
               ></Image>
             </div>
           </label>
@@ -54,6 +43,7 @@ export default function DashboardLayout({ children }) {
         </div>
       </div>
       <div className="bg-base-200 min-h-screen p-8">{children}</div>
+      <Sidebar />
     </div>
   );
 }
