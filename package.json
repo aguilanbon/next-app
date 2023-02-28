@@ -13,9 +13,10 @@
     "@nivo/line": "^0.80.0",
     "@nivo/pie": "^0.80.0",
     "daisyui": "^2.51.1",
+    "express": "^4.18.2",
     "jotai": "^2.0.2",
+    "mongoose": "^7.0.0",
     "next": "13.2.1",
-    "pocketbase": "^0.11.1",
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "react-use": "^17.4.0"
