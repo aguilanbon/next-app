@@ -28,7 +28,7 @@ export default function DashboardLineChart() {
     },
   ];
   return (
-    <div className="lg:w-1/2 w-full h-full flex">
+    <div className="lg:w-1/2 w-full h-fit flex">
       <ResponsiveLine
         data={data}
         margin={{ top: 50, right: 110, bottom: 50, left: 60 }}

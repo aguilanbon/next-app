@@ -11,7 +11,7 @@ export default function DashboardPieChart() {
     { id: "E", value: 25 },
   ];
   return (
-    <div className="lg:w-1/2 w-full h-full flex">
+    <div className="lg:w-1/2 w-full h-fit flex">
       <ResponsivePie
         data={data}
         margin={{ top: 40, right: 80, bottom: 80, left: 80 }}
