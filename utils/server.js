@@ -20,7 +20,6 @@ mongoose
 // Define your routes
 app.get("/", async (req, res) => {
   try {
-    console.log('hi');
     const clients = await Client.find({});
     res.json(clients);
   } catch (error) {
